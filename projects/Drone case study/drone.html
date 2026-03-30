@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>uxsneha - casestudy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="drone.css">
+
+</head>
+<body>
+<main>
+<div class="container py-5 content-wrapper">
+  
+  <section class="hero-section">
+  <div>
+  
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 px-3 py-4">
+  <!-- Logo and text section -->
+  <div class="d-flex flex-column col-12 col-md-5">
+    <div class="mb-4">
+      <img class="img-fluid logo-img" src="Icons/drone-svgrepo-com.svg" alt="Logo">
+    </div>
+    <div class="subtitle h6 mb-3 text-wrap">DRONE VIDEO SURVEILLANCE & INTELLIGENCE SYSTEM</div>
+    <div class="description">
+      - Designed  for Public Safety
+    </div>
+  </div>
+
+  <!-- Mockup image -->
+  <div class="col-12 col-md-6">
+    <img class="img-fluid" src="Assets/design mockup.png" alt="App Mockup">
+  </div>
+</div>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <h4>Role</h4>
+          <p>UX/UI Designer</p>
+        </div>
+        <div class="info-item">
+          <h4>Client</h4>
+          <p>Kerala Police</p>
+        </div>
+        <div class="info-item">
+          <h4>Platform</h4>
+          <p>Web Application</p>
+        </div>
+        <div class="info-item">
+          <h4>Timeline</h4>
+          <p>Oct 2025</p>
+        </div>
+      </div>
+
+    </div>
+  </section> 
+
+  <!-- Floating visual cubes --> 
+    <div class="glow-drone drone1"></div>
+<div class="glow-drone drone2"></div>
+
+
+
+<div>
+
+  <div>
+  <h4 class="subsection-title">Context</h4>
+  <p>
+    This project was done as a client engagement for Kerala Police, focused on designing a centralised platform to manage drone-based video surveillance, AI-assisted monitoring, and reporting.
+</p>
+  <p>
+    Unlike consumer or startup products, this system was designed for live public safety operations, where decisions affect real people, real events, and real outcomes. The platform needed to support multiple roles — administrators, drone operators, analysts, and viewers — each with very different responsibilities, permissions, and cognitive demands.
+</p>
+<div>
+<blockquote class="styled-quote" style="font-size: medium;">
+  Certain operational details and screens have been intentionally simplified or omitted in this case study to respect confidentiality and security requirements.
+</blockquote>
+
+</div>
+
+  <div>
+  <h4 class="subsection-title">The Problem Space</h4>
+  <p>
+    The client brief described a system where drones capture large volumes of video across different locations and events — traffic monitoring, crowd control, perimeter surveillance, and incident response.
+</p>
+  </div>
+<p class="solution-heading" style="font-size: larger; margin-top: 4rem;">Some key realities shaped the problem:</p>
+<ul class="tick-list">
+  <li>Multiple teams interact with the same data, but should not have the same level of access</li>
+  <li>AI can assist detection, but human judgment must remain central</li>
+  <li>Alternative login with Google / Apple for faster access</li>
+  <li>Live operations require speed, while analysis and reporting require accuracy</li>
+  <li>The system must be usable in calm environments and high-pressure situations</li>
+</ul>
+
+  <div>
+  <h4 class="subsection-title">Role Separation</h4>
+  <p>
+    The platform was intentionally divided into four primary roles: (Each role has its own mental model, risks, and priorities) </p>
+</div>
+
+<div class="col-12 col-md-10 col-lg-08 text-center" style="margin-top: 4rem; margin-bottom: 3rem;">
+  <img class="img-fluid rounded" src="Assets/Frame 2095585556.png" style="max-width: 100%;" alt="Asset">
+  </div>
+
+  <div>
+  <h4 class="subsection-title">Designing for Responsibility</h4>
+  <p>
+    Instead of asking “What should this screen show?”, the guiding questions became:
+  </p>
+  <ul class="tick-list">
+  <li>What decisions is this person allowed to make?</li>
+  <li>What information do they need now, and what can wait?</li>
+  <li>What should they never be able to do?</li>
+  <li>How do we prevent misuse without slowing down real work?</li>
+</ul>
+ <p style="margin-bottom: 5rem;">
+    This thinking led to a strict role-based structure, where the same system behaves very differently depending on who is signed in.
+  </p>
+
+  <div class="col-12 col-md-12 col-lg-14 text-center" style="margin-top: 4rem; margin-bottom: 3rem;">
+  <img class="img-fluid rounded" src="Assets/Comparison table.png"max-width: 100%;" alt="alt="Dashboard visualizing key insights from user research at local grocery store>
+  </div>
+
+  </div>
+
+  <blockquote class="styled-quote" style="font-size: medium; margin-top: 4rem; margin-bottom: 3rem;">
+  A User, whatever their role is, should never feel rushed but should never feel lost either.
+</blockquote>
+</div>
+
+<div class="sticky-stage-tabs" style="margin-bottom: 6rem;">
+  <div class="tab-scroll-container">
+    <div class="d-flex flex-nowrap mt-3 mx-2" id="stageTabs">
+      <button class="btn stage-tab" data-section="research">Admin</button>
+      <button class="btn stage-tab" data-section="define">Operator</button>
+      <button class="btn stage-tab" data-section="ideate">Analyst</button>
+      <button class="btn stage-tab" data-section="design">Viewer</button>
+     <!-- <button class="btn stage-tab" data-section="output">Final Output</button> -->
+    </div>
+  </div>
+</div>
+
+<section id="research">
+  
+<div class="card-wrapper">
+<div class="card-custom">
+  <div class="role-row">
+    <div class="role-icon">
+      <img src="Icons/admin-svgrepo-com.svg" alt="Admin icon">
+    </div>
+    <div class="role-content">
+      <div class="step-title">Admin</div>
+      <div class="step-description">
+        Oversees system health, access, and compliance
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+ 
+    <p class="mb-n7 mt-5">
+      According to the RFP, Admins are responsible for control, governance and orchestration of the overall system.
+    </p>
+
+    <p class="solution-heading" style="font-size: larger; margin-top: 4rem;">
+      Admin Responsibilities:
+    </p>
+
+    <ul class="tick-list" style="margin-bottom: 2rem;">
+      <li>Govern People → User & Role Management</li>
+      <li>Govern Assets → Drone Management</li>
+      <li>Govern Data Flow → Video Management</li>
+      <li>Govern Intelligence Output → Reports & Emergency Control</li>
+    </ul>
+
+    <p>At its core, the Admin space revolves around these four responsibilities.</p>
+
+    <blockquote class="styled-quote" style="font-size: medium;">
+      In surveillance systems, giving “power users” too much power isn’t ideal solution.
+    </blockquote>
+
+<p class="solution-heading" style="font-size: larger; margin-top: 6rem;">Information Architecture</p>
+<p>Structured the Admin IA to ensure operational clarity and to mirror the administrative mental model.<br style="margin-bottom: 2em;">
+</p>
+
+<div class="ia-container">
+
+  <div class="ia-root">ADMIN</div>
+
+  <div class="ia-level">
+
+    <!-- Dashboard -->
+    <div class="ia-branch">
+      <div class="primary">Dashboard</div>
+      <div class="ia-children">
+        <div class="ia-node">Overview Statistics</div>
+        <div class="ia-node">Recent Activity Log</div>
+        <div class="ia-node">Total Drones Registered</div>
+        <div class="ia-node">Total Videos Uploaded</div>
+        <div class="ia-node">Active Drone Operators / Analysts / Viewers</div>
+        <div class="ia-node">Latest AI Analysis Summaries</div>
+      </div>
+    </div>
+
+    <!-- User Management -->
+    <div class="ia-branch">
+      <div class="primary">User Management</div>
+      <div class="ia-children">
+        <div class="ia-node">Create / Edit / Delete Users</div>
+        <div class="ia-node">Assign Roles (Operator / Analyst / Viewer)</div>
+        <div class="ia-node">Activate / Deactivate Users</div>
+        <div class="ia-node">View User Activity Logs</div>
+      </div>
+    </div>
+
+    <!-- Drone Management -->
+    <div class="ia-branch">
+      <div class="primary">Drone Management</div>
+      <div class="ia-children">
+        <div class="ia-node">Add / Edit / Delete Drones</div>
+        <div class="ia-node">Assign Drone to Operator</div>
+        <div class="ia-node">Monitor Drone Status (Active / Offline)</div>
+        <div class="ia-node">View Live Feed Access List (Emergency only)</div>
+      </div>
+    </div>
+
+    <!-- Video Management -->
+    <div class="ia-branch">
+      <div class="primary">Video Management</div>
+      <div class="ia-children">
+        <div class="ia-node">View All Uploaded Drone Videos</div>
+        <div class="ia-node">Assign Videos to Analysts</div>
+        <div class="ia-node">Approve / Reject Analyst Reports</div>
+        <div class="ia-node">Archive / Delete Old Videos</div>
+        <div class="ia-node">Tag Videos (Surveillance / Traffic / Event)</div>
+      </div>
+    </div>
+
+    <!-- Report & Analytics -->
+    <div class="ia-branch">
+      <div class="primary">Report & Analytics</div>
+      <div class="ia-children">
+        <div class="ia-node">View AI Result Summaries</div>
+        <div class="ia-node">Generate Reports</div>
+        <div class="ia-node">Export to PDF / CSV</div>
+      </div>
+    </div>
+
+    <!-- Emergency Control -->
+    <div class="ia-branch">
+      <div class="primary">Emergency Control</div>
+      <div class="ia-children">
+        <div class="ia-node">View Real-time Drone Feeds</div>
+        <div class="ia-node">Send Alert to Operators / Analysts</div>
+        <div class="ia-node">Assign Urgent Tasks</div>
+        <div class="ia-node">Monitor Alerts from Analysts</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<h4 class="subsection-title">Design in Action</h4>
+ <p class="mb-n5">
+      The real challenge was designing a clear, low-risk control layer that administrators could rely on, especially in time-sensitive situations.
+    </p>
+
+<h4 class="solution-heading" style="font-size: larger; padding-top: 20px;"># Admin Dashboard</h4>
+<section class="design-section">
+
+  <!-- Before Image Left -->
+  <div class="design-block">
+    <div class="design-images mt-5">
+      <img src="Assets/Admin dashboard.png" alt="Home screen design mockup" />
+    </div>
+  
+  <div class="design-content mt-5" style="font-size: 0.85em;">
+
+  <p>
+    <span style="color:#cbe8ff; font-weight:600;">Key System stats</span> 
+     for quick operational health check and instant situational Awareness (not for deep analysis).
+   </p>
+
+  <p>
+    <span style="color:#cbe8ff; font-weight:600;">Real-time alerts</span> 
+     positioned in a visually prominent area, as they need the highest priority - Reduces Risk situations.
+   </p>
+
+  <p>
+    <span style="color:#cbe8ff; font-weight:600;">Simplified activity visibility</span> 
+     of streams (Read-only) , respecting role boundaries.
+  </p>
+
+</div>
+ <div style="font-size: medium; font-style: italic; color: #a4abad; padding-top: 20px;">
+    Admin should understand “what’s happening” in 5 seconds.
+  </div>
+</div>
+
+</section>
+
+<section class="design-section fleet-section">
+  <div class="fleet-header">
+  <h4 class="solution-heading" style="font-size: larger; padding-bottom: 40px;"># Drone Fleet Management</h4>
+  </div>
+  <!-- Before Image Left -->
+  <div class="design-block reverse">
+    <div class="design-images">
+      <img src="Assets/drone management.png" alt="Home screen design mockup" />
+    </div>
+  
+  <div class="design-content" style="font-size: 0.85em;">
+
+  <p> <span style="color:#cbe8ff; font-weight:600;">Structured table layout</span> 
+      designed for quick scanning and high information clarity.
+   </p>
+
+  <p>  <span style="color:#cbe8ff; font-weight:600;">Status chips</span> 
+     (Online, Offline, Maintenance) for instant operational awareness.
+  </p>
+
+  <p> <span style="color:#cbe8ff; font-weight:600;">Battery level & operator visibility</span> 
+      support quick readiness checks and allocation decisions.
+  </p>
+
+  <p> <span style="color:#cbe8ff; font-weight:600;">Search & filters</span> 
+      positioned at the top for efficient record handling.
+  </p>
+
+  <p> <span style="color:#cbe8ff; font-weight:600;">Inline actions</span> 
+       to minimize unnecessary navigation and speed up routine tasks.
+  </p>
+</div>
+</div>
+</section>
+
+  <p style="font-size: medium; font-style: italic; color: #a4abad; padding-bottom: 80px;">
+      Disclaimer: The same design system and layout pattern is consistently applied across other modules to maintain predictability and reduce learning effort.
+  </p>
+
+</section>
+
+<section id="define" style="margin-top: 80px;">
+
+<div class="card-wrapper">
+<div class="card-custom">
+  <div class="role-row">
+    <div class="role-icon">
+      <img src="Icons/remote-control-svgrepo-com.svg" alt="Admin icon">
+    </div>
+    <div class="role-content">
+      <div class="step-title">Operator</div>
+      <div class="step-description">
+        Manages live drone missions and uploads footage
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<p class="mb-n7 mt-5">
+  If Admin is about control, Operator is about execution.
+</p>
+
+<p>
+  According to the RFP, Operators are responsible for active mission handling,
+  live monitoring, and safe drone deployment in dynamic environments.
+</p>
+
+<p class="solution-heading" style="font-size: larger; margin-top: 4rem;">
+  Situation:
+</p>
+
+<div class="situation-pills">
+  <span class="pill">Fast-paced</span>
+  <span class="pill">Time-sensitive</span>
+  <span class="pill">High-stakes</span>
+</div>
+
+<p class="solution-heading" style="font-size: larger; margin-top: 4rem;">
+  Operator Responsibilities:
+</p>
+
+<ul class="tick-list" style="margin-bottom: 2rem;">
+  <li>Execute Missions → Launch, Control & Land Drones</li>
+  <li>Monitor Live Feeds → Maintain Situational Awareness</li>
+  <li>Respond to Alerts → Immediate Field Action</li>
+  <li>Upload Footage → Ensure Accurate Data Handover</li>
+</ul>
+
+<p class="solution-heading" style="font-size: larger; margin-top: 5rem;">
+Information Architecture
+</p>
+
+<p>
+  Instead of structuring around modules, the Operator IA is structured around mission flow.
+  The navigation mirrors what happens before, during, and after a deployment.
+</p>
+
+<div class="ia-container">
+
+  <div class="ia-root">OPERATOR</div>
+
+  <div class="ia-level">
+
+    <!-- Dashboard -->
+    <div class="ia-branch">
+      <div class="primary">Dashboard</div>
+      <div class="ia-children">
+        <div class="ia-node">Assigned Drone Overview</div>
+        <div class="ia-node">Active Missions</div>
+        <div class="ia-node">Pending Actions</div>
+        <div class="ia-node">Alerts & Critical Warnings</div>
+        <div class="ia-node">Mission Timeline</div>
+        <div class="ia-node">Quick Access to Active Drone</div>
+      </div>
+    </div>
+
+    <!-- My Drones -->
+    <div class="ia-branch">
+      <div class="primary">Drones (Assigned)</div>
+      <div class="ia-children">
+        <div class="ia-node">Active / Pending / Completed Tabs</div>
+        <div class="ia-node">Real-time Telemetry (Altitude, Speed, Signal, Battery, Temperature)</div>
+        <div class="ia-node">GPS Coordinates & Heading Data</div>
+        <div class="ia-node">Map View & Zone Visibility</div>
+        <div class="ia-node">Start / End Mission Control</div>
+        <div class="ia-node">Emergency Return / Fail-safe Trigger</div>
+        <div class="ia-node">Field Remarks / Notes</div>
+      </div>
+    </div>
+
+    <!-- Video Feeds -->
+    <div class="ia-branch">
+      <div class="primary">Video Feeds</div>
+      <div class="ia-children">
+        <div class="ia-node">Upload Captured Drone Videos</div>
+        <div class="ia-node">View Uploaded Videos (History)</div>
+        <div class="ia-node">Status (Processing / Approved / Rejected)</div>
+        <div class="ia-node">Search & Filter (Event / Status)</div>
+      </div>
+    </div>
+
+    <div class="ia-branch">
+      <div class="primary">Live Streaming</div>
+      <div class="ia-children">
+        <div class="ia-node">Start Live Stream to Server</div>
+        <div class="ia-node">Notify Admin & Analysts when stream is active </div>
+        <div class="ia-node">Monitor Live Connection Health (Signal, FPS) </div>
+      </div>
+    </div>
+
+    <!-- Audit Logs -->
+    <div class="ia-branch">
+      <div class="primary">Audit Logs</div>
+      <div class="ia-children">
+        <div class="ia-node">Mission Activity History</div>
+        <div class="ia-node">Upload Activity Records</div>
+        <div class="ia-node">System-triggered Alerts History</div>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div class="ia-branch">
+      <div class="primary">Settings</div>
+      <div class="ia-children">
+        <div class="ia-node">Profile Management</div>
+        <div class="ia-node">Notification Preferences</div>
+        <div class="ia-node">Security & Access Controls</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<h4 class="subsection-title">Design in Action</h4>
+
+<p class="mb-n5">
+  The Interface has to be minimal to reduce cognitive load during live operations and without distraction.
+</p>
+
+<h4 class="solution-heading" style="font-size: larger; padding-top: 20px;">
+# Operator Dashboard
+</h4>
+
+<section class="design-section">
+
+<div class="design-block">
+  <div class="design-images mt-5">
+    <img src="Assets/Operator dashboard.png" alt="Operator dashboard mockup" />
+  </div>
+
+  <div class="design-content mt-5" style="font-size: 0.85em;">
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Assigned drones and Mission count blocks</span>  
+      (active, pending, unresolved) surfaced at the top provide instant workload clarity overview in a glance.
+    </p>
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Alert hierarchy separated by severity</span>  
+      to reduce scanning time and cognitive effort during high-pressure situations.
+    </p>
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Mission timeline</span>  
+       adds temporal context without forcing navigation.
+    </p>
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">System health visibility</span>  
+       of active drones (battery, signal, GPS) reduces mid-mission surprises.
+    </p>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<section class="design-section fleet-section">
+  <div class="fleet-header">
+  <h4 class="solution-heading" style="font-size: larger; padding-bottom: 40px;"># Live Mission Interface</h4>
+  </div>
+  <!-- Before Image Left -->
+  <div class="design-block reverse">
+    <div class="design-images">
+      <img src="Assets/live drone operating.png" alt="Home screen design mockup" />
+    </div>
+  
+  <div class="design-content" style="font-size: 0.85em;">
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Active Drone and lifecycle controls</span>  
+      are highlighted to anchor attention on what’s currently in motion
+    </p>
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Core flight metrics</span>  
+      structured horizontally for quick scanning, reducing interpretation time during live operations.
+    </p>
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Raw GPS and heading data</span>  
+      prioritized, while the map remains secondary, supporting awareness without dominating decision space.
+    </p>
+
+    <p> 
+      Clear separation of 
+      <span style="color:#cbe8ff; font-weight:600;">critical actions, destructive confirmations,</span>
+      and restrained 
+      <span style="color:#cbe8ff; font-weight:600;">color usage</span>
+      ensure speed without compromising operational safety. 
+    </p>
+  </div>
+</div>
+</section>
+
+<p style="font-size: medium; font-style: italic; color: #a4abad; padding-bottom: 30px;">
+</p>
+
+<div class="metric-box">
+  <h4 class="metric-title">Performance Metrics</h4>
+  <p class="metric-text">
+If it takes more than a few seconds to assess readiness, the interface has failed already.
+  </p>
+</div>
+
+
+</section>
+
+<section id="ideate" style="margin-top: 190px;">
+
+<div class="card-wrapper">
+<div class="card-custom">
+  <div class="role-row">
+    <div class="role-icon">
+      <img src="Icons/teleop-svgrepo-com.svg" alt="Admin icon">
+    </div>
+    <div class="role-content">
+      <div class="step-title">Analyst</div>
+      <div class="step-description">
+        Reviews video feeds, validates AI detections, and prepares reports
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<p class="mb-n7 mt-5">
+  According to the RFP, Analysts are responsible for reviewing drone footage, identifying patterns, and generating intelligence that supports operational and administrative decisions.
+</p>
+
+<p>
+  Their work is primarily converting raw aerial footage into structured, verified findings and actionable reports.
+</p>
+
+<p class="solution-heading" style="font-size: larger; margin-top: 4rem;">
+  Core Areas:
+</p>
+<ul class="tick-list" style="margin-bottom: 2rem;">
+  <li>Pattern recognition</li>
+  <li>Evidence validation</li>
+  <li>Incident detection</li>
+</ul>
+
+<p class="solution-heading" style="font-size: larger; margin-top: 4rem;">
+  Analyst Responsibilities:
+</p>
+<ul class="tick-list" style="margin-bottom: 2rem;">
+  <li>Analyze Footage → Review and interpret uploaded drone videos</li>
+  <li>Detect Patterns → Identify anomalies, risks, and suspicious activities</li>
+  <li>Validate AI Results → Confirm or correct automated detections</li>
+  <li>Generate Intelligence Reports → Structure insights and submit to decision makers</li>
+</ul>
+
+<p class="solution-heading" style="font-size: larger; margin-top: 5rem;">
+Information Architecture
+</p>
+
+<p>
+  The Analyst interface is structured around analysis workflow.
+  Navigation is structured on how footage moves through the system — from raw video review to verified intelligence output.
+</p>
+
+<div class="ia-container">
+
+  <div class="ia-root">ANALYST</div>
+
+  <div class="ia-level">
+
+    <!-- Dashboard -->
+    <div class="ia-branch">
+      <div class="primary">Dashboard</div>
+      <div class="ia-children">
+        <div class="ia-node">Assigned Videos Overview</div>
+        <div class="ia-node">Active Analysis Tasks</div>
+        <div class="ia-node">Flagged Events / Alerts</div>
+        <div class="ia-node">Pending Reviews</div>
+        <div class="ia-node">Completed Analysis Summary</div>
+        <div class="ia-node">Workload Trends & AI Review Metrics</div>
+      </div>
+    </div>
+
+    <!-- Assigned Videos -->
+    <div class="ia-branch">
+      <div class="primary">Assigned Videos</div>
+      <div class="ia-children">
+        <div class="ia-node">Assigned Drone Videos</div>
+        <div class="ia-node">Video Preview with Drone Name & Operator Details</div>
+        <div class="ia-node">Video Metadatas (Drone ID, Event Type, Time, GPS)</div>
+        <div class="ia-node">Search & Filter Videos (Event / Location / Date)</div>
+        <div class="ia-node">Processing Status (Pending / In Progress / Completed)</div>
+        <div class="ia-node">Open Video for Analysis Workspace</div>
+      </div>
+    </div>
+
+    <!-- AI Video Analysis -->
+    <div class="ia-branch">
+      <div class="primary">Analysis Workspace</div>
+      <div class="ia-children">
+        <div class="ia-node">Video Playback with Timeline Scrubbing</div>
+        <div class="ia-node">AI Detection Overlays (Vehicles / Faces / Objects)</div>
+        <div class="ia-node">Vehicle Number Plate Detection (ANPR)</div>
+        <div class="ia-node">Face Detection & Recognition</div>
+        <div class="ia-node">Moving Object Detection</div>
+        <div class="ia-node">Frame Tagging & Incident Marking</div>
+        <div class="ia-node">Annotation & Evidence Attachment</div>
+        <div class="ia-node">Jump to AI Detection Frame</div>
+        <div class="ia-node">Severity Selection & Alert Flagging</div>
+      </div>
+    </div>
+
+    <!-- Reports -->
+    <div class="ia-branch">
+      <div class="primary">Reports</div>
+      <div class="ia-children">
+        <div class="ia-node">Generate AI Analysis Report</div>
+        <div class="ia-node">Incident / Activity / Diagnostic Report Types</div>
+        <div class="ia-node">View Report Status (Submitted / Approved / Under Review)</div>
+        <div class="ia-node">Edit or Update Draft Reports</div>
+        <div class="ia-node">Submit Reports to Admin for Review</div>
+      </div>
+    </div>
+
+    <!-- Audit Logs -->
+    <div class="ia-branch">
+      <div class="primary">Audit Logs</div>
+      <div class="ia-children">
+        <div class="ia-node">Analysis Activity History</div>
+        <div class="ia-node">Incident Tagging Logs</div>
+        <div class="ia-node">Report Submission Records</div>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div class="ia-branch">
+      <div class="primary">Settings</div>
+      <div class="ia-children">
+        <div class="ia-node">Profile Management</div>
+        <div class="ia-node">Notification Preferences</div>
+        <div class="ia-node">Security & Access Controls</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<h4 class="subsection-title">Design in Action</h4> 
+
+<p class="mb-n5">
+Analysts often review hours of drone footage to detect suspicious activity.  
+The interface had to prioritize clarity, quick scanning, and efficient analysis without overwhelming the user.
+</p>
+
+
+<h4 class="solution-heading" style="font-size: larger; padding-top: 20px;">
+# Analyst Dashboard
+</h4>
+
+<section class="design-section">
+
+<div class="design-block">
+  <div class="design-images mt-5">
+    <img src="Assets/Analyst Dashboard.png" alt="Analyst dashboard mockup" />
+  </div>
+
+  <div class="design-content mt-5" style="font-size: 0.85em;">
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Workload summary cards</span>  
+      (assigned, active, flagged, pending) appear at the top to give analysts an instant sense of what needs attention first.
+    </p>
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Workload trend visualization</span>  
+      helps understand task flow over time, revealing patterns in assignments, completions, and pending work.
+    </p>
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Manual review vs AI detection chart</span>  
+      increases transparency and builds trust in system intelligence/ AI assistance.
+    </p>
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Event detection overview</span>  
+      provides a quick snapshot of the types of incidents being detected across the system.
+    </p>
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<section class="design-section fleet-section">
+  <div class="fleet-header">
+  <h4 class="solution-heading" style="font-size: larger; padding-bottom: 40px;">
+  # AI Video Analysis Workspace
+  </h4>
+  </div>
+
+  <div class="design-block reverse">
+
+    <div class="design-images">
+      <img src="Assets/Analyst video analysis.png" alt="Analyst video analysis mockup" />
+    </div>
+  
+  <div class="design-content" style="font-size: 0.85em;">
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">AI detection overlays</span>  
+      highlight suspicious elements directly on the video feeds, for quick analysis.
+    </p>
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Timeline scrubbing with detection markers</span>  
+      helps analysts jump directly to moments where AI flagged activity instead of manually scanning the entire footage.
+    </p>
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Incident marking and annotation tools</span>  
+      allow analysts to document suspicious frames, add notes, and attach supporting evidence.
+    </p>
+
+    <p>
+      The right-side panel groups 
+      <span style="color:#cbe8ff; font-weight:600;">severity selection, tagging, and evidence uploads</span>,  
+      keeping investigative actions separate from the video viewing area.
+    </p>
+
+    <p>
+  Once the review is complete, analysts can 
+  <span style="color:#cbe8ff; font-weight:600;">save the analysis</span>  
+  for later continuation or 
+  <span style="color:#cbe8ff; font-weight:600;">generate the report</span>  
+  to submit findings for administrative review.
+</p>
+
+  </div>
+
+</div>
+</section>
+
+
+<p style="font-size: medium; font-style: italic; color: #a4abad; padding-bottom: 80px;">  
+The interface helps analysts move quickly from detection to documentation without losing context.
+</p>
+
+<div class="metric-box">
+  <h4 class="metric-title">Performance Metrics</h4>
+  <p class="metric-text">
+    If analysts spend time searching for moments instead of analyzing them,
+    the system is slowing intelligence work.
+  </p>
+</div>
+
+</section>
+
+<section id="design" style="margin-top: 190px;">
+
+  <div class="card-wrapper">
+<div class="card-custom">
+  <div class="role-row">
+    <div class="role-icon">
+      <img src="Icons/folder-view-eye-svgrepo-com.svg" alt="Admin icon" style="width:32px; height:32px;">
+    </div>
+    <div class="role-content">
+      <div class="step-title">Viewer</div>
+      <div class="step-description">
+       Observes authorised streams and summaries with no control or interpretation rights.
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<p class="mb-n7" style="margin-top: 60px; margin-bottom: 30px;">
+  According to the RFP, Viewer access is intentionally limited to read-only interactions — allowing authorized personnel to monitor live feeds, review processed footage, and access intelligence summaries without altering system data.
+</p>
+
+<div class="situation-pills">
+  <span class="pill">Observation focused</span>
+  <span class="pill">Read-only access</span>
+  <span class="pill">Situational awareness</span>
+</div>
+
+<p class="solution-heading" style="font-size: larger; margin-top: 4rem;">
+  Viewer Responsibilities:
+</p>
+<ul class="tick-list" style="margin-bottom: 2rem;">
+  <li>Monitor Live Streams → Observe ongoing drone surveillance feeds</li>
+  <li>Review Processed Videos → Access archived footage and summaries</li>
+  <li>Browse Intelligence Reports → Read verified analysis outputs</li>
+  <li>Track Incidents → Identify alerts and relevant events across locations</li>
+</ul>
+
+
+<p class="solution-heading" style="font-size: larger; margin-top: 7rem;">
+Information Architecture
+</p>
+
+<p>
+  The Viewer interface is focused on information visibility without any control.
+</p>
+
+<div class="ia-container">
+
+  <div class="ia-root">VIEWER</div>
+
+  <div class="ia-level">
+
+    <!-- Dashboard -->
+    <div class="ia-branch">
+      <div class="primary">Dashboard</div>
+      <div class="ia-children">
+        <div class="ia-node">Live Stream Overview</div>
+        <div class="ia-node">Available Reports</div>
+        <div class="ia-node">Upcoming Events</div>
+        <div class="ia-node">Archived Videos Summary</div>
+        <div class="ia-node">Recent Alerts</div>
+        <div class="ia-node">Live Drone Locations Map</div>
+      </div>
+    </div>
+
+    <!-- Live Streams -->
+    <div class="ia-branch">
+      <div class="primary">Live Streams</div>
+      <div class="ia-children">
+        <div class="ia-node">View Authorized Drone Streams</div>
+        <div class="ia-node">Real-time AI Detection Overlays</div>
+        <div class="ia-node">Stream Metadata (Drone ID, Zone, Timestamp)</div>
+        <div class="ia-node">Live Detection Alerts & Viewer Count</div>
+      </div>
+    </div>
+
+    <!-- Video Feed -->
+    <div class="ia-branch">
+      <div class="primary">All Videos</div>
+      <div class="ia-children">
+        <div class="ia-node">View Archived Drone Footage</div>
+        <div class="ia-node">AI Detection Highlights</div>
+        <div class="ia-node">Video Metadata (Drone ID, Location, Time)</div>
+        <div class="ia-node">Search & Filter (Location / Event / Date)</div>
+      </div>
+    </div>
+
+    <!-- Reports -->
+    <div class="ia-branch">
+      <div class="primary">Reports</div>
+      <div class="ia-children">
+        <div class="ia-node">View Approved Analysis Reports</div>
+        <div class="ia-node">Read AI Detection Summaries</div>
+        <div class="ia-node">Download Reports (PDF / CSV)</div>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div class="ia-branch">
+      <div class="primary">Settings</div>
+      <div class="ia-children">
+        <div class="ia-node">Profile Management</div>
+        <div class="ia-node">Notification Preferences</div>
+        <div class="ia-node">Security Settings</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<h4 class="subsection-title">Design in Action</h4>
+
+<p class="mb-n5">
+Viewer interfaces prioritize awareness, which aim to quickly understand ongoing situations without exposing complex operational controls.
+</p>
+
+
+<h4 class="solution-heading" style="font-size: larger; padding-top: 20px;">
+# Viewer Dashboard
+</h4>
+
+<section class="design-section">
+
+<div class="design-block">
+  <div class="design-images mt-3">
+    <img src="Assets/Viewer Dashboard.png" alt="Viewer dashboard mockup" />
+  </div>
+
+  <div class="design-content mt-3" style="font-size: 0.85em;">
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Status indicators</span>  
+      at the top provide quick access to critical updates including live streams, reports, upcoming events, and recent alerts.
+    </p>
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Drone location map</span>  
+      helps viewers quickly understand geographic coverage and active monitoring zones.
+    </p>
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Graphical summaries</span>  
+      surface recent intelligence outputs without requiring deeper navigation.
+    </p>
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<section class="design-section fleet-section">
+  <div class="fleet-header">
+  <h4 class="solution-heading" style="font-size: larger; padding-bottom: 40px;">
+  # Live Stream Monitoring
+  </h4>
+  </div>
+
+  <div class="design-block reverse">
+
+    <div class="design-images">
+      <img src="Assets/Viewers Live streams.png" alt="Viewer live stream interface" />
+    </div>
+
+  <div class="design-content" style="font-size: 0.85em;">
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">Live stream cards</span>  
+      present real-time drone footage with essential context such as location, drone ID, and timestamp.
+    </p>
+
+    <p>
+      <span style="color:#cbe8ff; font-weight:600;">AI detection badges</span>  
+      highlight suspicious elements or detected objects directly on the feed preview.
+    </p>
+
+    <p>
+      Minimal interaction options ensure viewers can monitor events clearly without interfering with operational workflows.
+    </p>
+
+  </div>
+</div>
+</section>
+
+
+</section>
+
+<p class="impact-result">
+<strong>Result:</strong> A command system that improves situational awareness while reducing decision friction.
+</p>
+
+<h4 class="subsection-title">System Strengths</h4>
+
+<div class="system-strength">
+
+  <div class="strength-item">
+    <div class="strength-icon"><i class="bi bi-diagram-3"></i></div>
+    <h4>Role-Based Architecture</h4>
+    <p>Ensures each user only sees what they need while maintaining operational safety.</p>
+  </div>
+
+  <div class="strength-item">
+    <div class="strength-icon"><i class="bi bi-shield-check"></i></div>
+    <h4>Operational Clarity</h4>
+    <p>Critical alerts, missions, and detections surface immediately during time-sensitive situations.</p>
+  </div>
+
+  <div class="strength-item">
+    <div class="strength-icon"><i class="bi bi-cpu"></i></div>
+    <h4>Human + AI Collaboration</h4>
+    <p>AI assists detection while human analysts retain control of final decisions.</p>
+  </div>
+
+  <div class="strength-item">
+    <div class="strength-icon"><i class="bi bi-lightning-charge"></i></div>
+    <h4>Pressure-Ready Interface</h4>
+    <p>Consistent layouts reduce learning effort and help teams act quickly.</p>
+  </div>
+</div>
+
+<p style="color:#bbb; margin-top:30px;">
+<strong>Impact:</strong> <br> A structured surveillance platform that maintains full operational visibility while reducing decision friction during live operations.
+</p>
+
+<h4 class="subsection-title">Future Opportunities</h4>
+<ul class="mb-4" style="list-style-type: disc; padding-left: 1.5rem; color: #bbb;">
+
+<li class="mb-3">
+Multiple analysts could review the same drone footage at the same time, adding notes and discussing observations together during critical incidents.
+</li>
+
+<li class="mb-3">
+AI could also help prioritize alerts, highlighting the most critical detections so analysts can focus quickly during large-scale events.
+</li>
+
+<li class="mb-3">
+A mobile companion interface would support field officers on the ground. Instead of relying only on the control room, they could quickly check verified intelligence reports and receive live updates directly from their phones.
+<li class="mb-3">
+Over time, Predictive insights from historical drone data could also help identify recurring risk zones or unusual activity patterns before they escalate.</li>
+
+</ul>
+
+<h4 class="subsection-title">Reflections</h4>
+
+<ul class="mb-4" style="list-style-type: disc; padding-left: 1.5rem; color: #bbb;">
+
+<li class="mb-3">
+Designing for public safety systems requires thinking beyond interface aesthetics. Every design decision affects how quickly someone can understand and act.
+</li>
+
+<li class="mb-3">
+To make complex operations feel clear and reliable for the people who depend on them, the design needs to guide attention so critical information can be grasped within the first few seconds.
+</li>
+</ul>
+
+<br>
+<p style="color:#bbb; margin-top:40px;">
+In the end, the goal wasn’t just to design a usable interface, but to create a system that helps people stay aware, confident, and in control during critical situations.
+</p>
+
+<div class="thank-you-footer" style="margin-top: 15rem;">
+  <p class="thank-text">Thankyou for taking the time to read.</p>
+  <p class="byline">— A UX Case Study by <span class="highlighted-name">Sneha</span></p>
+</div>
+
+
+
+
+</div>
+</main>
+<footer class="footer mt-auto py-3 text-center">
+  <p class="mb-0">&copy; <span id="year"></span> Sneha Babu | UX Designer</p>
+</footer>
+
+<!-- Scroll Progress Button -->
+<div id="scrollProgressBtn" class="scroll-progress">
+  <svg class="progress-ring" width="60" height="60">
+    <circle class="progress-ring__circle" stroke="#00ccff" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+  </svg>
+<div class="arrow-up">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00ccff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="18" x2="12" y2="6" />
+    <polyline points="6 12 12 6 18 12" />
+  </svg>
+</div>
+
+
+</div>
+
+  
+<script src="drone.js"> </script>
+
+</body>
+</html>

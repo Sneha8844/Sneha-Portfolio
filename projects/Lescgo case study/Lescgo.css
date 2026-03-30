@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background:
+    radial-gradient(circle at top left, #ffd6e8, transparent 40%),
+    radial-gradient(circle at bottom right, #d6f0ff, transparent 40%),
+    linear-gradient(120deg, #f6f4f0, #efeae3);
+  color: #000;
+  overflow-x: hidden;
+}
+
+/* Grain */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Top */
+.case-top {
+  position: fixed;
+  top: 24px;
+  left: 32px;
+  z-index: 10;
+}
+
+
+/* Sections */
+.section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 140px 32px;
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero img {
+  width: 100%;
+  margin-top: 48px;
+  border-radius: 28px;
+}
+
+/* Text */
+h1 {
+  font-size: 56px;
+  margin: 16px 0;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.muted {
+  opacity: 0.65;
+}
+
+.eyebrow {
+  font-size: 14px;
+  opacity: 0.6;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Lists */
+.list li {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Phases */
+.phases {
+  display: flex;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.phases span {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+}
+
+/* Split */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.split img {
+  width: 100%;
+  border-radius: 24px;
+}
+
+.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Quote */
+.quote {
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

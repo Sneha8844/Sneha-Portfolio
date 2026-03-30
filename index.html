@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="top-bar">
+  <button class="home-btn" id="homeBtn">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 11L12 4L21 11"></path>
+    <path d="M5 10V20H19V10"></path>
+  </svg>
+</button>
+
+<a href="assets/Resume_Sneha.pdf" download class="cv-btn">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+  stroke-linejoin="round">
+    <path d="M12 3V15"></path>
+    <path d="M7 10L12 15L17 10"></path>
+    <path d="M5 21H19"></path>
+  </svg>
+  Download CV
+</a>
+
+</header>
+
+  <!-- PAGE DOTS -->
+  <div class="page-dots">
+  <span class="dot active" data-page="0"></span>
+  <span class="dot" data-page="1"></span>
+</div>
+
+  <!-- PAGES -->
+  <main class="pages" id="pages">
+
+    <!-- INTRO PAGE -->
+    <section class="page intro active">
+
+  <div class="intro-layout">
+
+    <div class="intro-content">
+      <h1>Designing experiences that make sense.</h1>
+      <p>I’m a UX designer focused on clarity, flow, and human behavior.</p>
+  
+  <div class="connect-wrapper">
+
+<button class="primary-btn connect-btn" onclick="toggleConnect()">
+  Connect
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+  stroke-linejoin="round">
+    <path d="M7 17L17 7"></path>
+    <path d="M7 7H17V17"></path>
+  </svg>
+</button>
+
+<div class="connect-menu" id="connectMenu">
+<a href="https://www.linkedin.com/in/sneha-babu-uiux/" target="_blank" class="connect-icon linkedin">
+  <img src="assets/linkedin-svgrepo-com.svg">
+</a>
+
+<a href="mailto:snehababu844@gmail.com?subject=Regarding%20your%20portfolio&body=Hi%20Sneha,%20I%20saw%20your%20work" class="connect-icon email">
+  <img src="assets/gmail-svgrepo-com.svg">
+</a>
+
+<a href="https://wa.me/9190616909229?text=Hi%20I%20saw%20your%20portfolio" target="_blank"
+ class="connect-icon whatsapp">
+  <img src="assets/whatsapp-svgrepo-com.svg">
+</a>
+
+</div>
+
+</div>
+
+    </div>
+
+    <div class="ui-preview">
+
+  <div class="ui-column col1">
+    <img class="ui-web" src="assets/ui/ui1.png">
+    <img class="ui-web" src="assets/ui/ui3.png" >
+    <img class="ui-mobile" src="assets/ui/ui2.png" >
+    <img class="ui-mobile" src="assets/ui/ui4.png">
+
+    <!-- duplicate for seamless loop -->
+    <img class="ui-web" src="assets/ui/ui5.png">
+    <img class="ui-mobile" src="assets/ui/ui4.png">
+  </div>
+
+  <div class="ui-column col2">
+    <img class="ui-mobile" src="assets/ui/mobile3.png">
+    <img class="ui-web" src="assets/ui/web3.png">
+    <img class="ui-mobile" src="assets/ui/mobile4.png">
+    <img class="ui-web" src="assets/ui/web4.png">
+
+    <!-- duplicate -->
+    <img class="ui-mobile" src="assets/ui/mobile3.png">
+    <img class="ui-web" src="assets/ui/web3.png">
+  </div>
+
+</div>
+
+  </div>
+
+</section>
+
+    <!-- PROJECTS PAGE -->
+    <section class="page projects">
+
+      <div class="projects-header">
+        <h2>Selected Works</h2>
+        <p>UX case studies & concept products</p>
+      </div>
+
+      <div class="projects-wrapper">
+  <button class="arrow left" id="prev">‹</button>
+
+  <div class="projects-viewport">
+    <div class="projects-track" id="track">
+
+      <div class="project-card" style="--card-color:#96b4d0;" onclick="openOverlay('projects/Drone case study/drone.html')">
+        <img src="assets/drone design mockup.png" style="width: 380px; padding-bottom: 36px;">
+        <h2 style=" padding-bottom: 12px;">Drone Surveillance System</h2>
+        <span style="font-size: medium;">Drone Surveillance System</span>
+        <div class="project-tags">
+  <span class="tag" style="color: #1c46a9; background:rgba(0, 51, 123, 0.06); border:1px solid rgba(0, 26, 62, 0.06);">Web App</span>
+  <span class="tag" style="color: #1c46a9; background:rgba(0, 51, 123, 0.06); border:1px solid rgba(0, 26, 62, 0.06);">Multi-role Platform</span>
+  <span class="tag" style="color: #1c46a9; background:rgba(0, 51, 123, 0.06); border:1px solid rgba(0, 26, 62, 0.06);">AI-Assisted</span>
+</div>
+      </div>
+
+      <div class="project-card" style="--card-color:#96d0af;" onclick="openOverlay('projects/Grovia case study/grovia.html')">
+        <img src="assets/grovia mockup screens.png" style="width: 280px; padding-bottom: 26px;">
+        <h2 style=" padding-bottom: 12px;">Grovia</h2>
+        <span style="font-size: medium;">In-Store Grocery Navigation</span>
+        <div class="project-tags">
+  <span class="tag" style="color: #0b5e15; background:rgba(0, 123, 2, 0.06); border:1px solid rgba(0, 62, 7, 0.06);">Mobile UX</span>
+  <span class="tag" style="color: #0b5e15; background:rgba(0, 123, 2, 0.06); border:1px solid rgba(0, 62, 7, 0.06);">AR Shopping Experience</span>
+  <span class="tag" style="color: #0b5e15; background:rgba(0, 123, 2, 0.06); border:1px solid rgba(0, 62, 7, 0.06);">Flow</span>
+</div>
+      </div>
+
+      <!--<div class="project-card" onclick="openOverlay('mentor.html')">
+        <video src="assets/project2.mp4" muted loop></video>
+        <h3>MentorMatch</h3>
+        <span>1:1 Learning Platform</span>
+      </div> -->
+
+ <div class="project-card in-progress image-wrap" style="--card-color:#b273d1;">
+  <img src="assets/CbQA design mockup 3.png" style="width: 410px; padding-bottom: 26px;">
+  <span class="status-badge">Project in Progress</span>
+  <h2 style="padding-bottom: 12px;">CBQA</h2>
+  <span style="font-size: medium;">HR Management System</span>
+  <div class="project-tags">
+    <span class="tag" style="color:#4f1c6d; background:rgba(133, 54, 197, 0.06); border:1px solid rgba(102, 40, 153, 0.08);">
+      B2B SaaS
+    </span>
+    <span class="tag" style="color:#4f1c6d; background:rgba(133, 54, 197, 0.06); border:1px solid rgba(102, 40, 153, 0.08);">
+      HR Operations
+    </span>
+    <span class="tag" style="color:#4f1c6d; background:rgba(133, 54, 197, 0.06); border:1px solid rgba(102, 40, 153, 0.08);">
+      Responsive System
+    </span>
+    
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <button class="arrow right" id="next">›</button>
+</div>
+
+    </section>
+
+  </main>
+
+  <!-- PROJECT OVERLAY -->
+<div class="project-overlay" id="projectOverlay">
+  <div class="overlay-backdrop"></div>
+
+  <div class="overlay-content">
+    <button class="overlay-close" onclick="closeOverlay()">✕</button>
+    <iframe id="projectFrame" src="" frameborder="0"></iframe>
+  </div>
+</div>
+
+<div class="cursor-guide" id="cursorGuide">
+  <span>Click to know more</span>
+</div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
