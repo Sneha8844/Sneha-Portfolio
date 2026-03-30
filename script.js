@@ -7,11 +7,19 @@ const pageSections = document.querySelectorAll(".page");
 const dots = document.querySelectorAll(".dot");
 const homeBtn = document.getElementById("homeBtn");
 
+function isMobile() {
+  return window.innerWidth <= 768;
+}
+
 let currentPage = 0;
 
 function updatePages() {
 
-  pages.style.transform = `translateX(-${currentPage * 100}%)`;
+ if (!isMobile()) {
+  pages.style.transform = `translateX(-${currentPage * 100}vw)`;
+} else {
+  pages.style.transform = "none";
+}
 
   pageSections.forEach((page, i) => {
     page.classList.toggle("active", i === currentPage);
@@ -34,7 +42,9 @@ function updatePages() {
 
 /* Scroll wheel → page change (only vertical) */
 window.addEventListener("wheel", (e) => {
-  if (e.target.closest(".projects")) return; // allow project interaction
+  if (isMobile()) return; 
+
+  if (e.target.closest(".projects")) return;
 
   if (e.deltaY > 0) currentPage = Math.min(1, pageSections.length - 1);
   if (e.deltaY < 0) currentPage = Math.max(0, 0);
@@ -44,6 +54,8 @@ window.addEventListener("wheel", (e) => {
 
 /* Click anywhere → next page (except projects) */
 pages.addEventListener("click", (e) => {
+  if (isMobile()) return;
+  
   if (
     e.target.closest(".projects") ||
     e.target.closest("button") ||

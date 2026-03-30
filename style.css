@@ -142,6 +142,7 @@ body::after {
   overflow-y: auto;
   transform: translateY(40px) scale(0.98);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  flex: 0 0 100%;
 }
 
 .page.active {
@@ -331,16 +332,24 @@ body::after {
 
 @media (max-width: 768px) {
 
+  /*  Disable horizontal page system */
+  .pages {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .page {
+    width: 100%;
+  }
+
+  /*  Disable transform navigation */
+  .pages {
+    transform: none !important;
+  }
+
+  /* Projects become scrollable */
   .projects-wrapper {
-    padding: 0 20px;
-  }
-
-  .project-card {
-    flex: 0 0 85%;   /* almost full width */
-  }
-
-  .arrow {
-    display: none;   /* arrows don't work well on mobile */
+    padding: 0 16px;
   }
 
   .projects-viewport {
@@ -348,10 +357,18 @@ body::after {
     scroll-snap-type: x mandatory;
   }
 
+  .projects-track {
+    gap: 16px;
+  }
+
   .project-card {
+    flex: 0 0 90%;
     scroll-snap-align: center;
   }
 
+  .arrow {
+    display: none;
+  }
 }
 
 /* PAGE EXIT */
