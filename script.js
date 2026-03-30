@@ -11,7 +11,7 @@ let currentPage = 0;
 
 function updatePages() {
 
-  pages.style.transform = `translateX(-${currentPage * 100}vw)`;
+  pages.style.transform = `translateX(-${currentPage * 100}%)`;
 
   pageSections.forEach((page, i) => {
     page.classList.toggle("active", i === currentPage);
