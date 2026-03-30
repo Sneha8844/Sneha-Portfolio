@@ -12,6 +12,8 @@ body {
     radial-gradient(circle at top left, #ffd6e8, transparent 40%),
     radial-gradient(circle at bottom right, #d6f0ff, transparent 40%),
     linear-gradient(120deg, #f6f4f0, #efeae3);
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* GRAIN TEXTURE */
@@ -22,6 +24,21 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 1;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 999px;
+}
+
+@media (min-width: 1024px) {
+  body::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* TOP BAR LAYOUT */
@@ -101,12 +118,22 @@ body::after {
 /* PAGE DOTS */
 .page-dots {
   position: fixed;
-  top: 32px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
+
   display: flex;
   gap: 10px;
-  z-index: 10;
+
+  padding: 8px 16px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+  z-index: 20;
 }
 
 .dot {
@@ -121,33 +148,35 @@ body::after {
   width: 32px;
   border-radius: 999px;
   background: rgba(56, 10, 69, 0.85);
+  transform: scale(1.2);
 }
 
 /* PAGES */
 .pages {
   display: flex;
-  width: 200%;
-  min-height: 100vh;
-  transition: transform 0.6s ease;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  height: 100vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pages::-webkit-scrollbar {
+  display: none;
 }
 
 .page {
-  width: 100%;
   min-height: 100vh;
   padding: clamp(80px, 10vh, 120px) clamp(24px, 6vw, 120px) 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  overflow-y: auto;
-  transform: translateY(40px) scale(0.98);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  flex: 0 0 100%;
-}
-
-.page.active {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  scroll-snap-align: start;
+  overflow: hidden;
+  flex: 0 0 100%;
 }
 
 /* INTRO */
@@ -160,15 +189,15 @@ body::after {
 }
 
 .intro h1 {
-  font-size: clamp(28px, 5vw, 48px);
+  font-size: clamp(28px, 5vw, 38px);
   line-height: 1.2;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .intro p {
-  font-size: 18px;
+  font-size: 16px;
   opacity: 0.75;
-  margin-bottom: 56px;
+  margin-bottom: 76px;
 }
 
 .primary-btn {
@@ -194,20 +223,20 @@ body::after {
 
 .projects-header {
   text-align: center;
-  margin-top: 48px;
+  margin-top: 8px;
   margin-bottom: 48px;
   max-width: 720px;
 }
 
 .projects-header h2 {
-  font-size: clamp(22px, 3vw, 32px);
+  font-size: clamp(22px, 3vw, 28px);
   margin-bottom: 8px;
 }
 
 .projects-header p {
   font-size: 16px;
   opacity: 0.7;
-  margin-bottom: clamp(32px, 6vh, 64px);
+  margin-bottom: clamp(32px, 6vh, 60px);
 }
 
 .projects {
@@ -216,12 +245,23 @@ body::after {
   align-items: center;
   padding-bottom: 100px;
   padding-top: 60px;
+  justify-content: flex-start;
+  overflow-y: auto; 
+  overscroll-behavior-y: contain;
 }
 
 /* VIEWPORT (clips cards) */
 .projects-viewport {
-  overflow: hidden;
-  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  max-width: 1100px;
+  margin: 0 auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.projects-viewport::-webkit-scrollbar {
+  display: none;
 }
 
 /* TRACK (moves) */
@@ -244,6 +284,7 @@ body::after {
   cursor: pointer;
   transition: transform 0.3s ease;
   position: relative;
+  scroll-snap-align: center;
 }
 
 .project-card::after{
@@ -317,19 +358,6 @@ body::after {
 }
 
 
-/* ARROWS */
-.arrow {
-  font-size: 40px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  opacity: 0.4;
-}
-
-.arrow:hover {
-  opacity: 1;
-}
-
 @media (max-width: 768px) {
 
   /*  Disable horizontal page system */
@@ -340,11 +368,6 @@ body::after {
 
   .page {
     width: 100%;
-  }
-
-  /*  Disable transform navigation */
-  .pages {
-    transform: none !important;
   }
 
   /* Projects become scrollable */

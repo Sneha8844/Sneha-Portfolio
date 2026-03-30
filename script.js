@@ -3,149 +3,56 @@
 ================================ */
 
 const pages = document.getElementById("pages");
-const pageSections = document.querySelectorAll(".page");
 const dots = document.querySelectorAll(".dot");
 const homeBtn = document.getElementById("homeBtn");
 
-function isMobile() {
-  return window.innerWidth <= 768;
-}
-
-let currentPage = 0;
-
-function updatePages() {
-
- if (!isMobile()) {
-  pages.style.transform = `translateX(-${currentPage * 100}vw)`;
-} else {
-  pages.style.transform = "none";
-}
-
-  pageSections.forEach((page, i) => {
-    page.classList.toggle("active", i === currentPage);
+/* go to page */
+function goToPage(index) {
+  pages.scrollTo({
+    left: index * window.innerWidth,
+    behavior: "smooth"
   });
-
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === currentPage);
-  });
-
-  /* show home button only on projects page */
-  if (homeBtn) {
-    if (currentPage === 1) {
-      homeBtn.classList.add("visible");
-    } else {
-      homeBtn.classList.remove("visible");
-    }
-  }
-
 }
 
-/* Scroll wheel → page change (only vertical) */
-window.addEventListener("wheel", (e) => {
-  if (isMobile()) return; 
-
-  if (e.target.closest(".projects")) return;
-
-  if (e.deltaY > 0) currentPage = Math.min(1, pageSections.length - 1);
-  if (e.deltaY < 0) currentPage = Math.max(0, 0);
-
-  updatePages();
-});
-
-/* Click anywhere → next page (except projects) */
-pages.addEventListener("click", (e) => {
-  if (isMobile()) return;
-  
-  if (
-    e.target.closest(".projects") ||
-    e.target.closest("button") ||
-    e.target.closest(".project-card") ||
-
-    e.target.closest(".intro-content") ||
-    e.target.closest(".ui-preview") ||
-    e.target.closest(".cv-btn") ||
-    e.target.closest(".page-dots")
-  ) return;
-
-  currentPage = Math.min(currentPage + 1, pageSections.length - 1);
-  updatePages();
-});
-
-/* Dots navigation */
+/* dots click */
 dots.forEach((dot, i) => {
-  dot.addEventListener("click", () => {
-    currentPage = i;
-    updatePages();
-  });
+  dot.addEventListener("click", () => goToPage(i));
 });
 
-/* Touch swipe (outside projects only) */
-let startX = 0;
-
-pages.addEventListener("touchstart", (e) => {
-  if (e.target.closest(".projects")) return;
-  startX = e.touches[0].clientX;
-});
-
-pages.addEventListener("touchend", (e) => {
-  if (e.target.closest(".projects")) return;
-
-  const diff = startX - e.changedTouches[0].clientX;
-
-  if (diff > 60) currentPage = Math.min(1, pageSections.length - 1);
-  if (diff < -60) currentPage = Math.max(0, 0);
-
-  updatePages();
-});
+/* home button */
+homeBtn.addEventListener("click", () => goToPage(0));
 
 /* ==============================
-   PROJECT SLIDER (HORIZONTAL)
+   SCROLL SYNC (IMPORTANT)
 ================================ */
 
-const track = document.getElementById("track");
+pages.addEventListener("scroll", () => {
+  const scrollLeft = pages.scrollLeft;
+  const pageWidth = window.innerWidth;
+
+  const index = Math.floor((scrollLeft + pageWidth / 2) / pageWidth); 
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+  });
+
+  homeBtn.classList.toggle("visible", index === 1);
+});
+/* ==============================
+   PROJECT SLIDER (CLEAN)
+================================ */
+
 const viewport = document.querySelector(".projects-viewport");
-const cards = document.querySelectorAll(".project-card");
 const next = document.getElementById("next");
 const prev = document.getElementById("prev");
 
-let sliderIndex = 0;
-
-function updateSlider() {
-  if (!cards.length) return;
-
-  const cardWidth = cards[0].offsetWidth + 32; // card + gap
-  const visibleCards = Math.floor(viewport.offsetWidth / cardWidth);
-  const maxIndex = Math.max(0, cards.length - visibleCards);
-
-  sliderIndex = Math.max(0, Math.min(sliderIndex, maxIndex));
-  track.style.transform = `translateX(-${sliderIndex * cardWidth}px)`;
-}
-
-/* Arrow navigation */
-next.addEventListener("click", (e) => {
-  e.stopPropagation();
-  sliderIndex++;
-  updateSlider();
+next.addEventListener("click", () => {
+  viewport.scrollBy({ left: 400, behavior: "smooth" });
 });
 
-prev.addEventListener("click", (e) => {
-  e.stopPropagation();
-  sliderIndex--;
-  updateSlider();
+prev.addEventListener("click", () => {
+  viewport.scrollBy({ left: -400, behavior: "smooth" });
 });
-
-/* Trackpad / mouse wheel horizontal scroll */
-viewport.addEventListener(
-  "wheel",
-  (e) => {
-    e.preventDefault();
-    viewport.scrollLeft += e.deltaY;
-  },
-  { passive: false }
-);
-
-/* Resize safety */
-window.addEventListener("resize", updateSlider);
 
 /* ==============================
    VIDEO PREVIEW
@@ -178,53 +85,39 @@ function closeOverlay() {
 
   frame.src = "";
   overlay.style.display = "none";
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow = "auto";
 }
-
-/* ==============================
-   HOME BUTTON
-================================ */
-
-if (homeBtn) {
-  homeBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    currentPage = 0;
-    updatePages();
-  });
-}
-
-/* INIT */
-updatePages();
-updateSlider();
 
 /* ==============================
    CONTACT POP-UP
 ================================ */
-function toggleConnect(){
+
+function toggleConnect() {
   document.getElementById("connectMenu").classList.toggle("active");
 }
 
 /* ==============================
-   CURSOR GUIDE
+   CURSOR GUIDE (FIXED)
 ================================ */
 
 const cursorGuide = document.getElementById("cursorGuide");
 
 function isDesktop() {
-  return window.innerWidth > 1024; // only laptop/desktop
+  return window.innerWidth > 1024;
 }
 
 document.addEventListener("mousemove", (e) => {
   if (!cursorGuide) return;
 
-  // ❌ Disable on small devices
   if (!isDesktop()) {
     cursorGuide.classList.remove("show");
     return;
   }
 
-  // ❌ Only show on HOME page
-  if (currentPage !== 0) {
+  /* ✅ get current page index */
+  const index = Math.round(pages.scrollLeft / window.innerWidth);
+
+  if (index !== 0) {
     cursorGuide.classList.remove("show");
     return;
   }
