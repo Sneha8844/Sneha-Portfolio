@@ -127,7 +127,7 @@ body::after {
 .pages {
   display: flex;
   width: 200vw;
-  height: 100vh;
+  min-height: 100vh;
   transition: transform 0.6s ease;
 }
 
