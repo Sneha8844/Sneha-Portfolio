@@ -136,6 +136,13 @@ body::-webkit-scrollbar-thumb {
   z-index: 20;
 }
 
+@media (max-width: 768px) {
+  .page-dots {
+    position: absolute;   /* instead of fixed */
+    bottom: 20px;
+  }
+}
+
 .dot {
   width: 10px;
   height: 10px;
