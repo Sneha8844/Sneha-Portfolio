@@ -136,13 +136,6 @@ body::-webkit-scrollbar-thumb {
   z-index: 20;
 }
 
-@media (max-width: 768px) {
-  .page-dots {
-    position: absolute;   /* instead of fixed */
-    bottom: 20px;
-  }
-}
-
 .dot {
   width: 10px;
   height: 10px;
@@ -369,12 +362,11 @@ body::-webkit-scrollbar-thumb {
 
   /*  Disable horizontal page system */
   .pages {
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
   }
 
   .page {
-    width: 100%;
+    flex: 0 0 100%;
   }
 
   /* Projects become scrollable */
