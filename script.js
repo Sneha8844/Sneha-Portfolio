@@ -26,17 +26,7 @@ homeBtn.addEventListener("click", () => goToPage(0));
    SCROLL SYNC (IMPORTANT)
 ================================ */
 
-pages.addEventListener("scroll", () => {
-  const scrollLeft = pages.scrollLeft;
-  const pageWidth = window.innerWidth;
-
-  const index = Math.floor((scrollLeft + pageWidth / 2) / pageWidth); 
-
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === index);
-  });
-
-  function isDesktop() {
+function isDesktop() {
   return window.innerWidth > 1024;
 }
 
@@ -50,13 +40,12 @@ pages.addEventListener("scroll", () => {
     dot.classList.toggle("active", i === index);
   });
 
-  /* ✅ Only control home button on desktop */
   if (isDesktop()) {
     homeBtn.classList.toggle("visible", index === 1);
   }
 });
 
-});
+
 /* ==============================
    PROJECT SLIDER (CLEAN)
 ================================ */
@@ -72,6 +61,31 @@ next.addEventListener("click", () => {
 prev.addEventListener("click", () => {
   viewport.scrollBy({ left: -400, behavior: "smooth" });
 });
+
+function updateArrows() {
+  const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+  const currentScroll = viewport.scrollLeft;
+
+  /* hide left at start */
+  if (currentScroll <= 10) {
+    prev.classList.add("hidden");
+  } else {
+    prev.classList.remove("hidden");
+  }
+
+  /* hide right at end */
+  if (currentScroll >= maxScroll - 10) {
+    next.classList.add("hidden");
+  } else {
+    next.classList.remove("hidden");
+  }
+}
+
+/* run on scroll */
+viewport.addEventListener("scroll", updateArrows);
+
+/* run initially */
+updateArrows();
 
 /* ==============================
    VIDEO PREVIEW
@@ -111,9 +125,38 @@ function closeOverlay() {
    CONTACT POP-UP
 ================================ */
 
+let connectTimeout;
+
 function toggleConnect() {
-  document.getElementById("connectMenu").classList.toggle("active");
+  const menu = document.getElementById("connectMenu");
+
+  menu.classList.toggle("active");
+
+  clearTimeout(connectTimeout);
+
+  if (menu.classList.contains("active")) {
+    connectTimeout = setTimeout(() => {
+      menu.classList.remove("active");
+    }, 3000);
+  }
 }
+
+/* CLOSE POPUP WHEN CLICKING ICON */
+document.querySelectorAll(".connect-icon").forEach(icon => {
+  icon.addEventListener("click", () => {
+    document.getElementById("connectMenu").classList.remove("active");
+  });
+});
+
+/* CLOSE POPUP WHEN CLICKING OUTSIDE */
+document.addEventListener("click", (e) => {
+  const menu = document.getElementById("connectMenu");
+  const wrapper = document.querySelector(".connect-wrapper");
+
+  if (!wrapper.contains(e.target)) {
+    menu.classList.remove("active");
+  }
+});
 
 /* ==============================
    CURSOR GUIDE (FIXED)
