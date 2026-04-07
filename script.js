@@ -36,7 +36,26 @@ pages.addEventListener("scroll", () => {
     dot.classList.toggle("active", i === index);
   });
 
-  homeBtn.classList.toggle("visible", index === 1);
+  function isDesktop() {
+  return window.innerWidth > 1024;
+}
+
+pages.addEventListener("scroll", () => {
+  const scrollLeft = pages.scrollLeft;
+  const pageWidth = window.innerWidth;
+
+  const index = Math.floor((scrollLeft + pageWidth / 2) / pageWidth); 
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
+  });
+
+  /* ✅ Only control home button on desktop */
+  if (isDesktop()) {
+    homeBtn.classList.toggle("visible", index === 1);
+  }
+});
+
 });
 /* ==============================
    PROJECT SLIDER (CLEAN)
