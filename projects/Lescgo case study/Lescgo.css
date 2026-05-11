@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: Inter, system-ui, sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   background:
     radial-gradient(circle at top left, #ffd6e8, transparent 40%),
     radial-gradient(circle at bottom right, #d6f0ff, transparent 40%),
